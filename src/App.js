@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import BitcoinPriceGraph from "./components/BitcoinPriceGraph.view";
+import BottomNavigation from "./components/BottomNavigation.view";
+import BuySellBTC from "./components/BuySellBTC.view";
+import CurrentAmount from "./components/CurrentAmount.view";
+import Header from "./components/Header.view";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ backgroundColor: "#f3f6f9" }}>
+      <Header />
+      <CurrentAmount />
+      <BitcoinPriceGraph />
+      <BuySellBTC from="Home" />
+      <BottomNavigation />
     </div>
   );
 }
