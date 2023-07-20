@@ -26,7 +26,7 @@ function CurrentAmount() {
                 </div>
                 <p style={{ color: "#aeb8c4", fontWeight: "bold", }}>BTC</p>
             </div>
-            <p style={{ color: "#4c5968", fontWeight: "600", fontSize: "30px", margin: "0px" }}>3.529020BTC</p>
+            <p style={{ color: "#4c5968", fontWeight: "600", fontSize: "30px", margin: "10px 0px 0px 0px", padding: "0px 10px" }}>3.529020BTC</p>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", margin: "0px", padding: "0px 10px" }}>
                 <p style={{ color: "#aeb8c4", fontSize: "20px", lineHeight: "20px", fontWeight: "500", margin: "0px" }}>$19.153 USD</p>
                 <p style={{ backgroundColor: "#ee225d", color: "white", fontSize: "14px", fontWeight: "500", padding: "2px 10px", borderRadius: "20px" }}>-2.3%</p>
@@ -35,7 +35,7 @@ function CurrentAmount() {
                 <FontAwesomeIcon onClick={() => setShowBuySellCards(pre => !pre)} icon={faAngleDown} size='lg' style={{ color: "#aeb8c4" }} />
             </div>
             {showBuySellCards &&
-                <div style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", padding: "15px 0px" }}>
+                <div style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", gap: "15px", padding: "15px 10px" }}>
                     <BuySellBtcCard type="Buy" />
                     <BuySellBtcCard type="Sell" />
                 </div>

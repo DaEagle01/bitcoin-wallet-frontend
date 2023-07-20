@@ -53,9 +53,22 @@ function Header() {
             <p style={{ fontSize: "24px", color: "#4c5968", fontWeight: "bold" }}>Bitcoint Wallet</p>
             <FontAwesomeIcon icon={faEllipsisVertical} size='lg' style={{ color: "#aeb8c4", cursor: "pointer" }} onClick={toggleDropdown} />
             {isDropdownVisible && (
-                <div ref={dropdownRef} style={{ position: "absolute", top: "50px", right: "22px", backgroundColor: "white", boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)", borderRadius: "14px", zIndex: "1" }}>
+                <div ref={dropdownRef} style={{ position: "absolute", top: "50px", right: "22px", backgroundColor: "white", boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)", borderRadius: "14px", zIndex: "2" }}>
                     <DropDown dropdownOptions={dropdownOptions} />
                 </div>
+            )}
+            {isDropdownVisible && (
+                <div
+                    style={{
+                        position: "fixed",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        backgroundColor: "rgba(56, 56, 56, 0.60)",
+                        zIndex: "1"
+                    }}
+                />
             )}
         </div>
     )
