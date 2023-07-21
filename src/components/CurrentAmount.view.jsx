@@ -34,12 +34,23 @@ function CurrentAmount() {
             <div style={{ textAlign: "center" }}>
                 <FontAwesomeIcon onClick={() => setShowBuySellCards(pre => !pre)} icon={faAngleDown} size='lg' style={{ color: "#aeb8c4" }} />
             </div>
-            {showBuySellCards &&
-                <div style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", gap: "15px", padding: "15px 10px" }}>
-                    <BuySellBtcCard type="Buy" />
-                    <BuySellBtcCard type="Sell" />
-                </div>
-            }
+            <div style={{
+                opacity: showBuySellCards ? 1 : 0,
+                width: showBuySellCards ? "100%" : 0,
+                height: showBuySellCards ? "100%" : 0,
+                transition: showBuySellCards ?
+                    "width 0.9s, height 0.9s, opacity 0.1s 0.1s" :
+                    "width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s",
+            }}>
+                {showBuySellCards &&
+                    <div style={{
+                        display: "flex", justifyContent: "space-evenly", alignItems: "center", gap: "15px", padding: "15px 10px", transition: "opacity 0.5s ease", opacity: showBuySellCards ? 1 : 0,
+                    }}>
+                        <BuySellBtcCard type="Buy" />
+                        <BuySellBtcCard type="Sell" />
+                    </div>
+                }
+            </div>
         </div>
     )
 }

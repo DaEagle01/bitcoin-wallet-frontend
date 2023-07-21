@@ -1,9 +1,13 @@
 import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 
 function BuySellBtcCard({ type, from }) {
+    const [isHovering, setIsHovering] = useState(false);
     return (
         <div
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
             style={{
                 backgroundColor: from === "Home" ? "white" : "#e5eaf1",
                 padding: "20px 30px",
@@ -13,7 +17,9 @@ function BuySellBtcCard({ type, from }) {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-                width: "25%"
+                width: "25%",
+                transition: "transform 0.4s ease-in-out",
+                transform: isHovering ? "scale(1.1)" : "scale(1)"
             }}
         >
             <div
